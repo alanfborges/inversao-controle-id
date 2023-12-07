@@ -1,6 +1,7 @@
 package com.alandev.application;
 
 import com.alandev.entities.Employee;
+import com.alandev.services.BrazilTaxService;
 import com.alandev.services.PensionService;
 import com.alandev.services.SalaryService;
 import com.alandev.services.TaxServices;
@@ -18,7 +19,7 @@ public class Main {
         System.out.print("Salário bruto: ");
         Double grossSalary = sc.nextDouble();
 
-        TaxServices taxServices = new TaxServices();
+        TaxServices taxServices = new BrazilTaxService();
         PensionService pensionService = new PensionService();
         Employee employee = new Employee(nome, grossSalary);
         SalaryService salaryService = new SalaryService(taxServices, pensionService);
